@@ -1,0 +1,186 @@
+v-bind绑定style
+    
+   缩写
+    ：style= 
+   可以是对象，也可以是数组，数组的每一个索引一定要是对象
+   
+  例： 
+     
+    ：style="[对象，{属性名：‘属性值’}   ] "
+
+    如果是 例： background-color 要用引号抱起来
+               或着   驼峰法
+  
+
+v-model    《input》
+
+单选框  点击谁时  会把 value 附制给 v-model绑的属性
+   
+       但两个框要绑定一个属性
+    
+     例 <input type="radio" value="男" v-model="gender" />
+        <input type="radio" value="女" v-model="gender" />
+
+多选框
+     v-model链接的 只能是 true和false  也赋值成bool
+   
+  例： <input type="checkbox" v-model="show"/>
+
+
+多选框2 加value值
+
+    链接的一定是个数组 会把value值给这个数组当值
+
+   例：<input type="checkbox" value="吃" v-model="fav" />
+    
+      <input type="checkbox" value="喝" v-model="fav" />   
+
+下拉菜单
+
+    v-model链接的那个属性值是什么就会显示那个
+
+  例：<select v-model="brithyear">
+        <option value="1980">1980</option>
+        <option value="1990">1990</option>
+        <option value="2000">2000</option>
+        <option value="2010">2010</option>
+        <option value="2020">2020</option>
+      </select>
+
+下拉菜单2 
+    漏出来的菜单  属性  multiple
+
+      连接一个数组   选中的value值就会加里面
+
+  例
+     <select multiple v-model="arr">
+        <option value="A">A:大幅减少对佛IE我</option>
+        <option value="B">B:发的看发i哦俄青年开展</option>
+        <option value="C">C:dfasdfasdiojn</option>
+        <option value="D">D:fquieka</option>
+        <option value="E">E:发的是开发商的</option>
+      </select>
+
+
+v-model 修饰符
+
+       .lazy 当输入框失去焦点后才修改属性
+       .number 将数据转为数字的格式
+       .trim  删除字符串前后空格
+
+
+v-pre  
+      加了这个指令 表示不作用vue的功能
+
+v-cloak
+      可以隐藏为编译的标签
+
+v-once
+      只渲染一次数据
+
+
+computed 
+      Vue中的一个大对象  计算属性  
+     里面可以用来计算属性
+     里面的 函数 直接当返回值用
+     在methods中计算的话要调用
+
+ methods和computed有什么差别？
+        方法和计算属性有有什么差别？
+        methods调用了多少次就执行多少次
+        computed调用只执行一次计算，计算一次后这个结果会被缓存                      起来，之后要再访问这个属性，
+        直接使用缓存的结果，除非依赖其他属性发生了变化，才需要                         重新计算。
+
+
+双重数据绑定
+    对象有  set   和  get
+           设置       获取并且传送给调用者
+
+   数组 没有  但是有
+          push()
+          pop()
+          shift()
+          unshift()
+          splice()
+          sort()
+          reverse()
+
+计算属性 是因为只用了 get 
+
+
+
+
+watch 属性监听
+   
+      data内部的属性发生变化时 都可触发
+    
+
+  例 
+      bool(newValue, oldValue) {
+            console.log("bool变化了");
+            console.log(newValue);
+            console.log(oldValue);
+          },
+
+  对象要深度监听可以这样写
+  
+  例：
+     obj：{
+       handel（n，o）{
+    
+
+         }，
+        表示深度监听
+       deep：true
+        初始化监听
+       immediate：true
+
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

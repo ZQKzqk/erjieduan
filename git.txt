@@ -1,0 +1,140 @@
+git  指令   git init初始化
+
+
+ git add 添加文件名
+      
+      add .所有
+
+ git status 
+   
+      查看工作区状态 暂存区
+
+ git reset HEAD -- 文件名
+                   。
+                   文件夹名
+       撤回暂存区的文件到工作区
+
+ git commit -m ‘说明’
+
+       形成历史版本
+
+ git log
+       本里历史版本倒序
+
+ git reset --hard 版本id    
+
+       回到历史版本
+
+ git rebase - i  版本id 
+       删除历史版本
+        删除上个版本的id
+         然后按下 i  把pick改成drop
+           再按下esc  
+              输入：w q 
+
+
+上传到远程
+
+   在github上建立一个仓库 
+
+  
+git remote add origin 仓库地址https
+
+   remote：远程
+   add 添加
+   origin 变量名 这个可以随便写
+
+   地址  仓库地址
+
+git push -u origin master
+   
+    push 推送
+    -u  记录你本次推送到哪一个地址哪一个分支‘
+       下次不改 还是这个 直接git push
+
+    origin 推送到哪一个地址
+
+    master 主线上  （分支）
+
+
+拉去远程代码
+
+    git clone  地址
+
+  第二次  git pull
+
+         拉回
+   
+  拉取自己的直接 git pull   别的地方clone之后修改存为历史之后直接 git push   
+
+ 
+
+
+三个git相关文件 
+   因为空文件夹不会被git所识别  
+     所以git管理你的文件夹的时候提供一个
+ .gitkeep后缀
+       站位  即使时空
+ .gitignore 
+      里面写  文件名/   就会不识别这个文件
+ readme.md
+     里面直接写说明 就可以
+
+   >>>>>>>>查看分支
+
+
+     octotree  插件  
+
+创建分支
+   git branch  名字
+查看分支
+   git branch
+ 
+切换分支
+   git checkout 分支名字
+
+
+合并分支
+   git marge 要合过来的分支
+  
+
+删除分支 
+   git branch -d 你要删除的分支
+              -D 强烈删除
+
+
+上传分支远程
+    git push origin 分支名称
+
+删除远程分支
+    git push origin --delete 要删除的分之名称
+特殊分支
+    gh-pages
+      只要这个分支上有个index。html文件直接就是访问的时候要自      
+
+
+命名规范
+  master 主要支
+
+  dev 主开发分支
+  
+  feature-xxx dev上的分支 各个功能开发
+
+  feature-xx-fix-xx  修复bug的分支 功能上的
+
+ hot-fix-xx  紧急bug修复 master上的分支	
+   
+      
+
+
+clone 分支  因为只能clone 主分支
+   
+    git branch -a
+           查看远程分支
+
+                      a             a
+    git checkout -b 本地明 origin/远程分支明  
+
+                保证一样
+
+

@@ -1,0 +1,63 @@
+
+
+ 本地存储
+        + localStorage 和 sessionStorage
+        + 也是本地存储空间的一部分, H5 提出的内容
+
+      区别: 熟读并背诵全文
+        + localStorage/sessionStorage 和 cookie 的区别
+          1. 大小
+            => localStorage/sessionStorage: 8 ~ 20M 不等
+            => cookie: 4KB 左右
+          2. 携带
+            => localStorage/sessionStorage: 不会自动携带在请求里面
+            => cookie: 会在请求里面自动携带
+          3. 数据格式
+            => localStorage/sessionStorage: 只能存储字符串, 任意格式的字符串
+            => cookie: key=value; key2=value2;
+          4. 生命周期
+            => localStorage/sessionStorage: 分别是永久和会话
+            => cookie: 可以自定义
+          5. 存储形式
+            => localStorage/sessionStorage: 可以不基于域名存储
+            => cookie: 必须基于域名存储
+        + lcoalStorage 和 sessionStorage 的区别
+          1. 声明周期
+            => localStorage 只能是永久存储, 除非手动删除
+            => sessionStorage 只能会话存储, 关闭浏览器, 数据消失
+
+      操作 localStorage
+        1. 向 localStorage 里面体添加一条数据
+          => 语法: window.localStorage.setItem('名字', '值')
+          => 注意: 值只能填写字符串格式, 如果你填写其他数据类型, 会自动转换成字符串格式存储
+            -> 如果你存储的是一个 {}, 会自动转化成 '[object Object]'
+            -> 如果你需要存储复杂数据类型, 最好是转换成 json 格式字符串存储
+
+        2. 获取 localStorage 里面的某一条数据
+          => 语法: window.localStorage.getItem('名字')
+          => 返回值: 就是 localStorage 里面对应这一条数据的值
+
+        3. 删除 localStorage 里面的某一条数据
+          => 语法: window.localStorage.removeItem('名字')
+          => 作用: 删除某一条数据
+
+        4. 清除 localStorage 里面的所有数据
+          => 语法: window.localStorage.clear()
+          => 作用: 清空 localStorage
+
+      操作 sessionStorage
+        1. 向 sessionStorage 里面添加一条数据
+          => 语法: window.sessionStorage.setItem('名字', '值')
+          => 注意: 值只能填写字符串格式, 如果你填写其他数据类型, 会自动转换成字符串格式存储
+            -> 如果你存储的是一个 {}, 会自动转化成 '[object Object]'
+            -> 如果你需要存储复杂数据类型, 最好是转换成 json 格式字符串存储
+
+        2. 获取 sessionStorage 中的某一条数据
+          => 语法: window.sessionStorage.getItem('名字')
+          => 返回值: 这一条数据存储的值
+
+        3. 删除 sessionStorage 中的某一条数据
+          => 语法: window.sessionStorage.removeItem('名字')
+
+        4. 清除 sessionStorage 中的所有数据
+          => 语法: window.sessionStorage.clear()

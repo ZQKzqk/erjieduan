@@ -1,0 +1,97 @@
+watch 也可以写在vue外面
+
+   语法 vue实例.watch('监听目标'，执行函数，{deep：true。。})
+   
+ 例： app.$watch('info', ()=>{
+      console.log('info内部变化了');
+       }, {
+      deep: true,
+      immediate: true
+       });
+
+
+    可以写在事件函数里
+       例  点击时开始监听之类的
+            点击时取消之类的
+       返回值是关闭这个监听是个函数自动生成
+
+       例 在里面是 this 
+     
+         this.a =      this.watch('obj',function(){
+                 变化后要做的事情
+                 })  
+        关闭 thus.a（）
+        
+    
+       
+!!!!!!!!!!!!!!!!!!!!生命周期函数!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+        创建阶段
+1 创建一个Vue实例化
+
+2 开始读取生命周期函数
+
+3    第一个钩子  beforeCreate（）
+
+4  读取配置项和数据
+
+5    第二个钩子  created（）    
+
+      
+      挂载阶段
+
+6  查看有没有用el挂载dom元素 没有等待$mount()挂载
+
+7  查看有没有template这个属性有直接解析自己先不动
+    没有就把el链接的dom元素用template模板把元素的
+    outerHtml变成字符串解析后放那不动
+
+8      第三个钩子  beforeMount( )
+   
+9  把template编译好的内容替换掉el绑定的元素
+
+10      第四个钩子 mounted（）
+
+
+
+      更新阶段    
+              <-如dom没有用到Vue中的数据则不触发  ->
+               《watch会先触发》
+
+11   更改数据
+
+12     beforeUpdate（）
+
+13  dom元素的内容被重新编译
+
+14     updated()
+
+
+
+       销毁阶段
+
+
+15  输入 $destroy()  删除实例
+
+16  beforeDestroy（）开始删除
+
+17  开始清理各个事件 监听  等
+
+18   destroyed（）    删除干净
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

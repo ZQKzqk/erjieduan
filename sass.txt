@@ -1,0 +1,93 @@
+sass语法
+
+$
+  定义变量
+
+#{}
+   在选择器位置使用的时候要用#{}包裹
+
+@if 条件{}
+   
+@if 条件{}@else if{}   
+
+
+@for 循环
+  
+   1 @for 变量 from 1 to 4{}
+            包前不包后
+
+   2 @for 变量 from 开始数字 through 结束数字{}
+           包前包后
+
+   3 @for  循环可以遍历数组 
+            定义一个数组
+                  $list:red,sk,sad
+            找到数组length
+                  length（$list）
+            开始循环 @for
+             @for 变量 from 开始数组 through 结束数字
+                  索引
+
+拿到数组的每一项
+    nth（数组，索引）
+
+
+
+不单纯数组
+   $list: (1, red) (2, skyblue) (3, orange);
+
+
+
+@each循环
+
+   @each $item in 数组{} 
+       $m;index($list,$item)
+
+
+ 2. @each 第二种语法
+ $list: (1, red) (2, skyblue) (3, orange) (4, purple);
+ @each $m, $item in $list {
+   li:nth-child(#{ $m }) {
+     color: $item;
+   }
+ }
+
+
+混入函数
+    @mixin tran($p, $t, $d, $tf) {
+   -webkit-transition: $p $t $d $tf;
+   -moz-transition: $p $t $d $tf;
+  -ms-transition: $p $t $d $tf;
+  -o-transition: $p $t $d $tf;
+  transition: $p $t $d $tf;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

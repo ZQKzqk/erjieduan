@@ -1,0 +1,224 @@
+v-model  
+  
+    如果一个子组件要获取父元素的值并且改变值
+
+     例  :a=‘val’  @hah=‘函数’     
+     等于 v-model
+
+     等于 :value=''   @input='底层函数'
+
+
+<transition></transition>
+    动画
+
+       那个需要动画就用transition包起来
+
+
+包起来的组件 会自动获得 类名
+
+  
+    进入
+
+    初始化               进入过程            进入   
+v-enter         v-enter-active       v-enter-to  
+
+
+    离开
+
+   离开                离开过程             离开后
+v-leave        v-leave-active       v-leave-to
+
+
+
+加类名 transition   name=‘a’
+
+   然后  就可以  a-enter
+
+
+
+transfrom：scale（1）  大小
+
+
+
+创建动画
+
+   @keyframes  动画名{}
+
+   用的时候    div{ animation：动画化名 过度时间 }
+
+
+
+
+链接 animate.css    动画库
+
+  网址  animate.style      
+
+   自己取名字
+   animation-duration: 1.3s;  过渡时间
+
+   animation-iteration-count: 5; 次数
+
+   animation-delay: 300ms;    间隔时间
+
+   然后加类名   即可 
+
+
+
+transition 可以重新动画状态的类名
+
+    enter-active-class="新的名字"
+
+
+
+<transition-group> </transition-group>
+
+  多个元素都可以用动画  用这个标签包起来
+
+
+
+
+mode=‘in-out’   out-in
+
+      出完再进     不出完就进
+
+
+keep-alive和transition  
+
+
+      要用transition包起来keep-alive 
+
+      transition 包含一个  
+
+      keep-alive 只做用一级元素缓存
+
+
+
+
+异常捕获的生命周期函数
+
+errorCaptured(){}
+
+    子孙级组件报错时会触发 
+   
+    return  false    表示错误不在后台打印
+
+
+    里面三个参数  
+    第一个   表示错误信息
+
+    第二个    表示那个报的错
+
+    第三个    那个函数报的错  
+   
+
+
+异步组件
+
+  显示的时候在加载这个模块  用得着的时候加载
+
+
+  例 ： home：（）=>{import(地址)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            

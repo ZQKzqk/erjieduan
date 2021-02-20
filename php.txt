@@ -1,0 +1,144 @@
+php 语法
+
+     echo 
+       只能输出基本数据类型
+
+     print_r()
+       输出所有数据类型 布尔true是1 false 是 空白
+ 
+     var_dump()
+       输出所有数据类型
+
+$  用于声明变量
+  
+
+
+单引号是普通字符串
+
+
+
+
+双引号是特殊字符串 可以解析变量 
+   
+
+
+php 直接给浏览器输出中文会出现乱码
+
+
+
+
+先告诉浏览器 用什么字符集解析
+  header('content-type: text/html;charset=utf-8;');
+
+
+分支语句
+
+    if   
+
+循环
+   for
+
+
+php中的数组
+
+  索引型数组
+       $arr=array(100,200,300)
+         $arr[0]
+
+  关联性数组
+       $arr=array("name"=>"jack") 
+         $arr["name"]
+
+本机 ip 地址
+        + 每一个电脑有一个默认的本机 ip 叫做 127.0.0.1
+        + 相当于在网络环境下访问本机地址
+        + 输入 http://10.9.22.67 和 输入            http://127.0.0.1 打开的是一个服务器开放空间
+        + 这个 127.0.0.1 ip 地址还对应一个域名叫做            localhost
+        + 输入 http://localhost 也是打开的这个页面
+   
+
+
+建立数据库连接
+
+  $link = mysqli_connect('localhost', 'root', 'root', '库名');
+查询整个表并且返回结果
+
+   $res = mysqli_query($link, 'SELECT * FROM `表`');
+
+
+解析查询结果
+    $data = mysqli_fetch_all($res, MYSQLI_ASSOC);
+关闭连接
+    mysqli_close($link);
+
+
+
+sql语句  增删改查
+
+  增
+    INSERT INTO `表` VALUES(值, 值, 值, ...);
+     
+     INSERT INTO `表` (字段, 字段, 字段, ...) VALUES(值, 值, ...);
+
+  删
+    DELETE FROM `表` WHERE 条件
+        $sql = "DELETE FROM `表` WHERE `id`>1000";
+
+
+  改
+   
+
+    UPDATE `表` SET 字段=值 WHERE 条件;
+
+ $sql = "UPDATE `表` SET `name`='李四', `age`=60 WHEREid`>990";
+
+  查
+    SELECT * FROM `表`   查询所有数据
+
+    SELECT 需要的字段 FROM `表`  只能看到所有数据中的需要的字段
+
+
+    SELECT * FROM `表` WHERE 条件  筛选你所满足条件的数据
+
+    SELECT * FROM `表` WHERE 条件1 AND 条件2    满足两个条件
+
+    SELECT * FROM `表` WHERE 条件1 OR 条件2      满足任意一个就行
+
+
+    SELECT * FROM `表` ORDER BY `字段` ASC   对查询到的数据进行排序
+    SELECT * FROM `表` ORDER BY `字段` DESC
+
+
+    SELECT * FROM `表` LIMIT 开始索引, 多少个   从哪里开始 要多少个
+
+    SELECT * FROM `表` WHERE `name` LIKE '%关键字%';   查询有这个关键           字的
+       例  $sql = "SELECT * FROM `student` WHERE `name` LIKE '%三%'             AND `age`>26";
+
+
+
+
+json  格式  
+   
+      任何语言都有一个通用格式 json
+         语法 json_encode(php数据结构)
+         返回值  是一个 json 格式的字符串 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

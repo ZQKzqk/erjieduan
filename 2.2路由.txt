@@ -1,0 +1,109 @@
+transform : scaleY(o.5)
+            缩放o.5
+
+
+路由插件 
+    插都要 Vue.use()
+
+    
+routes：[] 
+  
+     管路路由的一个数组
+
+    path:路由地址
+
+    alias:路由的别地址
+
+    component：组件
+
+    redirect： 重定向 当路由是哪个是调到这个
+
+    
+mode：地址栏显示
+
+   history   不显示哈希#
+   hash      显示
+   abstract  不显示路由
+
+
+export default  向外输出
+
+  
+
+
+
+<router-link to='路由地址' ></router-link> 
+
+
+ <router-view></router-view>
+
+
+
+动态路由  
+    要在路由地址后面加上 :id
+          to后面加变量或者数据
+
+
+     到路由下可以一用$route.params.id来获得
+
+编程式导航
+
+    this.$router.push(‘路由地址’)  进入的路由
+    this.$router.back()  返回
+     this.$router.forward() 等价于前进1步
+     this.$router.go(-1)   表示后退一步
+     
+
+
+
+命名路由  
+     
+    给路由加个name属性  
+        name：‘路径’
+
+   to:{name:'mingzi '} 也可以跳到指定路由
+
+  
+   也可以用 query  进行传参数
+   
+    例  pamrms：{id：1}，query：{name：3}
+
+
+
+
+query
+
+
+
+  命名视图
+给站位符起名字
+    例  <router-view name="a" class="menu"></router-view>
+
+     router里面要写上  
+           components：{ a=组件}
+      
+
+
+
+
+
+
+
+   
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+         

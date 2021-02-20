@@ -1,0 +1,149 @@
+	字符串创建  
+    var  a = “哈哈”
+
+构造函数创建
+    
+    var a = new  tosting（“哈哈”）
+
+
+字符串方法
+   
+    全是返回值  字符串 不能被改变
+includes   找指定的字符  有则是true  没有 为false
+
+1  charat    查询索引（下标） 的字符
+
+2  charCodeat 查询索引位置的字符集
+
+3  touppercase 大写 只限于字母
+
+4  tolowercase 小写
+
+5  split   从切割成数组
+
+6  slice  从哪个索引位置 到那个
+
+7 concat 添加一些字符到字符串中 
+
+8  indexof   从哪个索引开始找谁
+
+9  lastindexof  从哪个索引开始向前查找
+
+10  replace    换取位置
+
+11  substr   从哪里开始截取几位 
+
+12  subsring 从几 截取到几
+
+13  trim     去掉空格
+
+14  padStart()  第一个参数是结果长度，第二个是用什么填充
+
+15  padEnd（）  和上面一样
+
+
+
+
+数字方法 
+     
+
+    math  
+    
+1 random  一个随机数字0到1 
+ 
+2 round  四舍五入
+
+3 ceil   进1
+
+4 floot 退1
+
+5 pom    平方
+
+6 sqrt  根
+
+7 max    几个中最大的 
+
+8 min   最小的
+
+9 abs  绝对值
+
+10  PI  圆周率
+
+
+
+
+改变进制
+ 
+tostring 可以改变进制数 改变后变成字符串
+
+
+    var a= 123
+
+
+   b= a.tostring(2)
+
+praseint  可以把一个数字当做一种进制  转成10进制
+
+   
+     b= a.praseint(56 ,2  )56当做2进制转成10进制
+
+
+保留几位小数点
+
+  
+toFixed（）
+   
+  a = 12.34
+ 
+ b= a.toFixed(1)  表示保留一位
+
+   
+
+
+  
+    
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

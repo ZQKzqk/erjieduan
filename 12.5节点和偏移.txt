@@ -1,0 +1,192 @@
+DOM的节点操作
+
+   什么是节点  
+！组成页面的每一部分
+  标签
+  文本
+  注释
+  属性
+
+！document 页面最大的节点  不是一个元素  是根节点
+
+！ html 最大的元素节点  用来承载其他元素节点 
+！ 标签 都是元素节点
+！ 文本 不作为父节点存在 
+！ 元素属性 是一个一个的属性节点 不作为独立节点存在
+！ 注释  单独一个内荣出现 
+
+
+获取节点  
+1 childNodes   所有子节点 
+
+2 children     所有元素节点
+
+3 firstchild   第一个子节点
+
+4 lastchild    最后一个节点
+
+5 firstElementChild  第一个元素节点
+
+6 lastElementChild   最后一个元素节点
+
+7 nextsibling       兄弟下面的节点
+
+8 nextElementSibling   兄弟下面的元素节点
+
+9 previousSibling     兄弟上面的节点
+
+10 previonsElemrngSibling  兄弟上面的元素节点
+
+11 parentNode         父节点  
+ 
+12 parentElement      父元素节点
+
+13 attributes      属性节点
+
+
+
+创建节点   
+ document.createElement()  创建元素节点 
+ 
+ document。createTextNode（） 创建文本节点
+
+
+插入节点
+
+  父节点，appendChild（）
+
+  父节点，insetBefore（插入节点。谁的前面）
+
+替换节点
+
+  父节点。replacechild（新节点，旧节点）
+
+删除节点
+
+  父节点。removechild（）
+
+或   节点。remove（）  自己删除自己
+
+
+
+克隆节点
+  
+   节点，clonenode（）
+
+    参数是  false  不克隆后代
+
+    参数数  ture    克隆后代
+
+
+
+
+
+节点属性  
+    
+nodeType 表示节点类型 以一个数字来描述
+
+     元素  1
+  
+      属性  2 
+     
+       文本  3 
+
+ 
+        注释  8
+nodename  表示节点名称
+
+    元素节点是大写的
+    属性节点是属性名
+    文本节点是 #text
+    注释节点是 #comment
+
+
+nodevalue  表示该节点的值
+  
+ 元素是 null
+ 属性是 属性值
+ 文本节点是文本内容
+ 只是节点是  注释里的内容
+
+
+
+
+元素的尺寸
+  
+  offsetwidth  和  offsetheight
+
+ 加边框的尺寸
+
+
+  clientwidth   和 clientheight 
+ 
+ 不加边框的尺寸
+
+
+
+
+
+元素的偏移量
+  
+  偏移量参考系
+offsetparent  
+    得到的是根据谁来量的偏移量  默认是body  谁加定位给谁
+
+offsetleft  和 offsettop 
+
+    得到的是离他的根据谁来偏移的多少
+
+
+
+
+浏览器窗口大小
+
+
+
+
+     不包含滚动条    
+   document，documentElement.clientwidth 
+
+   document.documentElement.clientheight
+   
+
+    包含滚动条
+ window。innerwidth
+
+  winner。innerheight
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

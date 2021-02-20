@@ -1,0 +1,182 @@
+时间对象的创建
+  
+var time = new Date()
+ 
+ ()里可以放7个值  依次：
+    数值传入：
+   
+  年，月，日，时，分，秒，毫秒
+
+
+
+如果只传入一个参数 拿到的是“格林威治”时间
+
+  
+   字符串  传入：
+   “年-月-日” 或 年/月/日/
+  
+   时分秒   “时：分：秒”
+
+获取时间对象信息的方法
+ 
+
+   getFullYear（） 年份信息
+ 
+   getMonth()      月份信息
+
+   getDate（）      日期信息
+
+   getHours（）     小时信息
+
+   getMinutes（）    分钟信息
+
+   getSeconds（）    秒钟信息
+
+   getMillSeconds() 毫秒信息
+
+   getDay（）         星期几
+  
+   getTime()          时间戳信息
+  
+
+设置更改时间信息方法
+  
+   setFullYear（）     修改年份信息
+ 
+   setMonth（）        修改月份信息
+
+   setDate（）         修改日期信息
+  
+   setHours（）        修改小时信息
+
+   setMinutes（）      修改分钟信息
+
+   setSeconds（）      修改秒钟信息
+
+   setMillSeconds（）  修改毫秒信息
+
+   setTime()           修改时间戳信息
+
+
+
+     
+
+定时器 
+  定时开始  
+   setTimeout（function（）{}，时间）
+  
+  间隔开始
+   setInterval（function（）{}，时间）
+
+
+关闭定时器 
+   clearTimeout（要关闭的返回值）
+
+   clearInterval（要关闭的返回值）
+
+ 用点击时间关闭要关闭的定时器
+
+    例  <bottrn  id="bot">点击<bottrn>
+ 
+        bot.onclick=(function(){
+             clearTimeout(“定时器的返回值”)
+
+                  })
+
+
+
+Bom 
+ 什么是Bom
+   一个提供给JS的一套操作浏览器的属性和方法
+        Bom的顶级对象是 window
+        所有Bom相关的操作都是 window.xxx
+        可以把window  省掉
+
+
+       
+获取浏览器的可视窗口尺寸
+   
+ window.innerwidth  返回只是可视的宽度
+ 
+ window.innerheight 返回值是可视窗口的高度
+
+
+
+浏览器的弹出层
+
+window.alert()
+     给浏览器一个可弹出的窗口
+
+
+
+
+
+window.confirm()
+       给浏览器一个可选择的窗口 
+   确定是 true   取消是 false
+   
+  可以做个  例：   var   a = confirm（）
+           
+                      if（a）{       
+                          alet（如果选择确认就出来）
+                           }
+window.prompt()
+        给浏览器一个可以书写的文本框
+
+
+浏览器的常见事件
+
+    window.onload=function(){}
+     外部加载完毕后这个才会实现
+
+
+
+
+    
+    window.onresize=function(){}
+      窗口大小改变的时候就回出现里面的指令
+
+
+
+
+    window.onscroll=function(){}
+       滑动滚动条的时候里面的指令就回出现
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+ 1. 创建 ajax 对象
+    const xhr = new XMLHttpRequest()
+
+2. 配置本次请求的信息
+    xhr.open('GET', './server/01_test.php')
+
+ 3. 发送请求
+    xhr.send()
+
+ 4. 接受结果
+    xhr.onload = function () {
+          当请求完成后会触发这个函数
+      console.log(xhr.responseText)
+    }
+
+
+
+按照 1243  顺序书写
+
+
+前端解析 json 格式字符串
+
+   json.parse(json格式字符串)
+  
+      会把json 格式转化成js数据结构
+
+
+
+ ajax 状态码
+        + 以一个数字来表示当前 ajax 到达哪一个步骤了
+        + 在 ajax 实例对象里面有一个属性叫做 readyState, 表示 ajax 状              态码
+          0: 表示创建 ajax 对象成功
+          1: 表示配置请求信息成功, 也就是执行完毕 open
+          2: 表示的是响应报文回到浏览器了, 但是浏览器还没有解析响应报文
+          3: 表示浏览器正在解析响应报文, 把响应体向 xhr.responseText              里面填充
+          4: 表示浏览器解析响应报文结束, 已经可以正常使用响应体了
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

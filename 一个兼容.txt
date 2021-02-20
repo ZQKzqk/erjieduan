@@ -1,0 +1,14 @@
+ie兼容问题：事件对象e e = e||window.event
+事件监听器：标准浏览器：事件源。addEventListener（事件，处理的函数）
+ie低版本：attachEvent（on事件，处理的函数） 兼容：if书写
+解绑监听器：标准浏览器：事件源.removeEventListener(事件，处理的函数名)
+ie低版本：detachEvent（on事件，处理的函数名）兼容：（if书写）
+键盘编码表：标准浏览器：e(事件对象).keyCode
+ie低版本：e（事件对象）.which 兼容：用||链接
+事件目标：标准浏览器：e.target
+ie低版本：e.srcElement ||链接
+阻止事件传播：标准浏览器：e.stopPropagation()
+ie低版本：e.cancelBubble（） 兼容：用if链接
+阻止默认事件：标准浏览器：e.preventDefault()
+ie低版本：e.returnValue = false
+通用版本：return false 兼容：if

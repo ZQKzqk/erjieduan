@@ -1,0 +1,90 @@
+slot 
+   插槽
+  
+     写在template里然后就可以在占位符里添加
+
+     如果写的时候加上name属性 那么占位符里面的插槽
+
+     就要写上 slot=‘’的属性
+
+
+vue路径  可以把图片当成路径
+     
+       例 import home1Image from './assets/home1.png';
+
+或者写上const publicPath = process.env.BASE_URL;
+
+  然后引用图片时就可以用publicPath+‘根路径的方式’
+module.exports = {
+  publicPath: '/my-app3/' 写个vue。config。js的文件
+}
+
+  或者 ：require('相对路径')
+
+
+<keep-alive/>
+   被keep-alive包裹的组件会在被销毁时 阻止销毁 组件被缓存起来
+  
+   对应的html结构删除  等到用的时候直接调用
+
+
+
+<component :is=''/>
+
+    动态组件 这个组件is是哪个组建的名字这个站位就给谁
+
+ 
+
+       
+activated（）
+
+deactivated（）
+
+      只有被keep-alive包裹的组建才会有这两个钩子
+
+         activated 不活跃 
+
+         deactivated 活跃状态
+
+
+例 ：  一般用来计算刷新  
+
+         activated(){
+                 console.log('不活跃状态');
+                 this. t=new Date().getTime()
+                
+               if(this.t-this.m){
+                  //经典例子  切换时间过长可以操作刷新
+                   if(this.t-this.m>=10000){
+                       
+                       
+                   }
+                   
+               }
+                
+                 
+             },
+             
+             deactivated(){
+                 console.log('活跃状态？');
+                 this. m=new Date().getTime()
+                
+                 
+             }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

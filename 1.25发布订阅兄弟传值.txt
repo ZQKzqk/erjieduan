@@ -1,0 +1,53 @@
+订阅模式
+    就是一个订购一个消息等别人给反馈
+
+
+下载包 npm i pubsub-js -S
+   谁用都要引入
+   import PubSub from 'pubsub-js'
+pubsub-js
+    订阅
+  pubsub.subscribe(“订阅事件”，回调函数)
+    发布
+
+   pubsub.publish('订阅事件'，传给回调函数的值)
+
+  取消订阅
+   pubsub.unsubscribe(返回值创建订阅的）
+   
+
+
+
+vue兄弟组件之间的传值
+
+  用一个中间实例传送
+    
+    Vue.prototype.a = new vue()
+  
+    $on('事件'，回调函数)
+
+    $emit('事件'，传的值)
+  
+    $off('事件'，回调函数)
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,172 @@
+slot
+
+如何获得slot里的属性
+
+
+  给占位符所用的slot  加上ref  就可以在
+
+  下面用refs。的方法  获取占位符里面的内容
+
+
+
+
+iscroll 
+
+   滚动视图
+        
+   下载 npm i iscorll
+
+
+   new Iscroll（‘需要滚动的视图元素’{一些属性}）
+   
+        
+    {
+
+     bounce: true,  弹簧效果
+     
+     click：true  移动端点击事件 300ms延迟
+
+     tap： true  移动端允许
+     
+     freeSrcoll：true 自由滚动
+
+     scrollx：true  x轴
+
+     scrolly：true  y轴
+
+     scrollbars：true   显示滚动条
+
+
+     fadescrollbars:true  淡入淡出效果
+
+     startx：0 滚动视图的初始位置
+
+     starty：0   
+
+     }
+
+
+     实例。scrollTo（x，y，time） 让滚动视图滚动到指定位置
+
+         .refresh（）  刷新视图
+
+
+         .x 当前x坐标 
+
+         .y 当前y坐标
+
+
+         .maxscrollX x轴可以滚动的最大范围
+
+         
+         .maxscrollY Y轴可以滚动的最大范围
+
+
+
+         .wrapperWidth  滚动视图的固定大小
+         .wrapperHeight  滚动视图的固定大小
+
+         .wrapper  滚动视图
+
+
+
+          .scrollerWidth   滚动容器的大小
+          .scrollerHeight  滚动容器的大小
+         .scroller  滚动容器
+
+
+
+        myScroll.on('beforeScrollStart', ()=>{
+  console.log('滚动开始前');
+})
+       myScroll.on('scrollStart', ()=>{
+  console.log('滚动开始了');
+})
+          myScroll.on('scroll', ()=>{
+  console.log('正在滚动');
+})
+         myScroll.on('scrollEnd', ()=>{
+  console.log('滚动停止');
+})
+
+         myScroll.on('scrollCancel', ()=>{
+  console.log('滚动取消');
+})
+
+
+
+
+
+
+axios 发送后台请求
+
+  方式1  axios.get('路径').then((i)=>{}).catch((e)=>{})
+
+  方式2  axios.get('url', {
+        params: {
+        key1: value1,
+        key2: value2,
+        key3: value3,
+            }
+            })。then（回调函数）
+
+ 
+ 发送post请求
+ 参数1:请求的url
+ 参数2:post请求的参数
+  参数3:请求的其他配置项
+
+                 axios.post('url', {
+           key1: value1,
+          key2: value2,
+           key3: value3,
+            }, { ... })
+        
+             .then(data=>{
+         
+        })
+         .catch((error)=>{
+         
+         })
+
+
+   vue解决跨域问题
+
+    
+在 vue.config.js中
+
+                 module.exports = {
+              配置服务器
+          devServer: {
+         https: false,       支持https
+           port: 8000,     端口号
+
+          服务器代理的配置
+        proxy: {
+            当请求为'/m-api'开头时
+            那么请求转发到target设置的地址上
+        '/m-api': {
+        target: 'http://47.98.159.95',
+        changeOrigin: true//需要修改服务器
+      }
+    }
+  }
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

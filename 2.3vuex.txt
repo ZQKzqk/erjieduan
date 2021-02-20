@@ -1,0 +1,29 @@
+vue x 
+
+    new Vuex.Store()
+    
+
+   namespaced:true,名字要
+
+stata
+   所有组件共享的状态  数据
+
+mutations   另外一边用 commit（‘函数’，参数 ）
+   只有这里面可以更改 全局的状态
+
+actions    另外一边用dispatch（‘函数’ 参数）
+   异步操作来这里
+
+modules
+   存放子模块   子模块命名  namespaced：true
+    对象的形式
+    this.$store.commit('user/setUsername', '张三');
+    console.log(this.$store.getters['user/length']);
+    
+getters
+   计算属性 用于计算statas里的属性
+
+
+
+
+
