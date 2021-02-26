@@ -25,5 +25,9 @@ getters
 
 
 
+可引入这个  来用辅助函数
 
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 
+    
+   计算属性里 computed:{...mapState（子模块【“”：“”】）}

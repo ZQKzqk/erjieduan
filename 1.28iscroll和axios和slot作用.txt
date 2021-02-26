@@ -35,7 +35,7 @@ iscroll
      scrolly：true  y轴
 
      scrollbars：true   显示滚动条
-
+     probeType ：1 2 3  改变频率
 
      fadescrollbars:true  淡入淡出效果
 
