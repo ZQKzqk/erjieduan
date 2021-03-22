@@ -1,0 +1,105 @@
+状态管理redux
+
+ 
+*************
+
+安装redux
+  
+  npm i -S redux
+
+
+三大原则
+  
+  单一数据源   state是只读的   使用纯函数来执行修改state
+
+
+
+使用 
+
+  import { createStore } from "redux"
+
+  retuce state store methods action 
+
+
+创建仓库
+
+   // 创建仓库
+const store = createStore(
+    reducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+
+
+
+
+react-redux 依赖于redux
+   
+   **********
+
+npm i -S react-redux  redux
+
+
+   在index.js中定义 import { Provider } from 'react-redux'
+
+
+   <Provider store={store}> 
+
+
+
+
+在子组件可以用 connect 是一个高级组件
+
+ import { connect } from 'react-redux'
+
+
+ 里面有两个函数作为参数  一个是state 另一个dispatch
+
+ 
+
+中间件  redux-thunk
+
+
+***************
+npm i -S redux-thunk
+
+
+
+   仓库哪里
+
+      import {createStore, applyMiddleware} from 'redux'
+     import thunk from 'redux-thunk'
+       const store = createStore(
+     reducer,
+     applyMiddleware(thunk)
+         )
+          export default store
+        要用插件仓库 的话  
+   const composeEnhancers = (typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+
+
+之后 就可以异步了
+
+
+redux 之 combineReducers方法
+
+
+    例   import { combineReducers } from 'redux'
+            import admin from './reducer/admin'
+          import web from './reducer/web'
+
+         const reducer = combineReducers({
+             admin,
+                       web
+                   })
+
+
+    state 会多个后缀
+
+    dispath 不受影响
+
+
+
+
+
+

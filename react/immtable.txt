@@ -1,0 +1,143 @@
+Immutable.js出自Facebook，是最流行的不可变数据结构
+的实现之
+一。它实现了完全的持久化数据结构，使用结构共享。
+所有的更新操作都会返回新的值，但是在内部结构是共
+享的，来减少内存占用(和垃圾回收的失效)。
+
+
+官网：https://immutable-js.github.io/immutable-js/
+https://cloud.tencent.com/developer/section/1489374
+
+优点：
+
+    降低mutable的复杂度
+    节省内存
+    历史追述
+    拥抱函数式编程
+缺点
+    要学习
+    资源包增加
+    容易混淆
+安装
+  ****************
+ 
+   npm i -S immutable
+
+
+
+map（）
+
+   将js对象转换成map对象
+    
+toJS（）
+   将map对象换成js对象
+
+List（）
+    将js数组换成LIst对象
+       也有push方法  get获取
+       concat（）合并数组
+fromJS（）
+    将js转immutable对象
+    
+    获取get（‘name’）
+
+    修改 set（‘name’）
+         setin（【name】）
+
+
+
+
+map list 只是一层
+
+   redux中集成immutable.js
+
+
+******************
+ npm i -S redux-immutable
+
+import { combineReducers } from 'redux-immutable'
+
+
+套组件用的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

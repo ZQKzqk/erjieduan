@@ -1,0 +1,88 @@
+动画
+
+ ******************8
+npm i -S react-transition-group
+
+
+state = {
+    show: true
+}
+
+	<CSSTransition
+         in={this.state.show}   //控制动画是否入场，为true时，动画进场，为false时动画出场
+          timeout={1000}         //动画执行时间
+	 classNames: '样式前缀名称' // string|object {{enter:’aa’,enterActive:’bb’}}
+          unmountOnExit  //元素退场时，自动把DOM也删除
+          >
+             <div>玩转React Transition</div>
+	</CSSTransition>
+	<button onClick={this.handleToggle}>Animation</button>
+)
+}
+
+
+
+结合  animate.css
+
+
+
+
+<CSSTransition
+          in={this.state.show}   //控制动画是否入场，为true时，动画进场，为false时动画出场
+          timeout={1000}         //动画执行时间
+	 //自定义的类名（定义动画效果，进场前，进场后直到结束，结束前，结束后）
+          classNames={{
+            enter: 'animate__animated',
+            enterActive: 'animate__fadeIn',
+            exit: 'animate__animated',
+            exitActive: 'animate__fadeOut'
+          }}     
+          unmountOnExit  //元素退场时，自动把DOM也删除
+          >
+             <div>玩转React Transition</div>
+</CSSTransition>
+
+
+
+
+
+
+列表动画
+
+   <TransitionGroup>
+	<CSSTransition
+          key={变量}  // 通过此key值来判断列表中的子节点需要被插入还是移除，然后触发动画
+          timeout={1000}         //动画执行时间
+	 //自定义的类名（定义动画效果，进场前，进场后直到结束，结束前，结束后）
+          classNames={{
+            enter: 'animate__animated',
+            enterActive: 'animate__fadeIn',
+            exit: 'animate__animated',
+            exitActive: 'animate__fadeOut'
+          }}     
+          unmountOnExit  //元素退场时，自动把DOM也删除
+          >
+             <div>玩转React Transition</div>
+	</CSSTransition>
+	
+</TransitionGroup>
+
+  
+
+路由过度包住swith
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

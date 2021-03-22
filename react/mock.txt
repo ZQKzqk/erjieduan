@@ -1,0 +1,38 @@
+npm i -g json-server
+
+
+  写一个json文件  直接用 json-server 文件名开启
+
+创建public/mock/mock.js文件（文件名并非固定）
+
+   index文件里 
+       引入
+      const swiper = require("./swiper.json");
+
+// 导出
+module.exports = () => ({
+    swiper,
+});
+
+
+   routes。json  里该路由
+
+  {
+    "/api/swiper": "/swiper"
+}
+
+    开启服务
+
+     scripts:{
+       "mock": "json-server ./src/mock/mock.js -r ./src/mock/router.json --port=9090"
+
+开启服务
+   npm run mock
+
+
+
+
+
+
+
+

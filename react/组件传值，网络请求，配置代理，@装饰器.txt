@@ -1,0 +1,171 @@
+组件传值
+ 
+   父传子 props 
+   
+   子传父 回调函数
+
+
+
+跨组件通信
+***
+   创建上下文对象 
+
+   import { createContext } from "react"
+
+   并导出  export default createContext()
+
+   
+   
+在App.js里发布消息 这样组件都可以接收 
+
+     import {Provider} from ‘路径’
+
+  然后传值  <Provider value={this.state.count}>
+
+  1，  下面的所有组件只要引入上下文{consumer}
+        <Consumer>
+               {(value) => {
+                        return <div>获取到的值是：{value}</div>;
+                 }}
+         </Consumer>
+
+  2， 绑定静态属性   引入总的
+         static contextType = context;
+    
+          然后 this.context 即可
+
+
+
+网络请求
+
+  axios 
+
+   *********** 
+npm i -S axios
+
+
+
+发起请求
+
+  官方文档
+
+
+ 
+react 反向代理
+
+   *****************
+npm i -S http-proxy-middleware
+
+在src的路径下配置 setupProxy.js文件 
+
+   ！！！！！！！！！！！！！！！！！！！！！！！
+
+ const {createProxyMiddleware: proxy} = require('http-proxy-middleware')
+
+  module.exports = app => {
+  app.use('/api', proxy({
+    target: 'http://localhost',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/api': '' 
+        }
+     }))
+   }
+
+
+高阶组件  
+   
+   创建一个函数 以组件作为参数  返回一个 加工过的组件
+
+
+
+     就可以拿到所有props值   {this。props}
+
+
+
+
+装饰器 @
+***********
+npm i -D customize-cra react-app-rewired
+
+ 
+ 修改一下package.json
+
+  
+ "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+
+
+
+在根目录里添加  config-overrides.js
+
+
+     const path = require('path')
+   const {addDecoratorsLegacy, override} = require('customize-cra')
+
+    const customize = () => (config, env) => {
+  config.resolve.alias['@'] = path.join(__dirname, 'src')
+  return config
+  }
+
+   module.exports = override(
+    addDecoratorsLegacy(),
+    customize()
+   )
+
+
+
+计算属性  memoization
+
+ *********
+npm i -S memoize-one
+
+
+ # 引入
+      import memoizeOne from 'memoize-one'
+
+# 使用
+       getValue = memoizeOne((x,y) => x+y)
+
+# 调用
+     render(){
+     let total = this.getValue(this.state.x, this.state.y)
+     return <div>{total}</div>
+     }
+
+ 
+
+memo
+
+react.memo() 是一个高级函数 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

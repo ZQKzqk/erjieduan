@@ -1,0 +1,109 @@
+react 事件处理
+
+  事件对象
+
+    如果需要传参的同时需要event 多用个函数套下 
+
+      函数不传参
+
+        event 
+      stopPropagation()和 preventDefault()，
+
+
+
+props 进阶
+
+  children属性
+
+    一般用于插槽功能
+
+*******
+类型设置prop-types
+     下载包
+  npm i -S prop-types
+
+     在组建中导入
+
+ import PropTypes from 'prop-types'
+
+
+
+ 函数组建中
+
+     函数组件
+     function App(){}
+      验证规则
+   App.propTypes = {
+    prop-name:PropTypes.string
+     }
+  
+  类组件
+   static 静态属性
+   
+   class App extends Component{
+     类内部完成 检查
+   static propTypes = {
+   prop-name:PropTypes.string
+      }
+     }
+  
+
+
+props 接收 默认值 设置
+
+函数组件
+function App(){}
+
+App.defaultProps = {
+    title: '标题'
+}
+
+
+类组件
+class App extends Component {
+static defaultProps = {
+    title: '标题'
+}
+}
+ 
+
+
+表单处理
+
+ 受控组件
+
+  值受状态限制就是受控组件
+ 
+ 非受控组件
+   没有受状态控制就是非受控组件
+
+
+
+创建ref 
+  官方推荐
+   React.createRef()
+
+
+
+
+生命周期
+
+  构造器  constructor（）
+
+  接收父元素props ?static getDerivedStateFromProps(nextProps, prevState)
+  
+  组件渲染 render（）
+
+  渲染成功 componentDidMount（）
+
+  更新时是否渲染render ?shouldComponentUpdate(nextProps, nextState)
+
+  更新前  ?getSnapshotBeforeUpdate(prevProps, prevState)
+
+  更新后   ?componentDidUpdate(prevProps, prevState, snapshot)
+  
+  即将卸载   componentWillUnmount（）
+
+
+
+

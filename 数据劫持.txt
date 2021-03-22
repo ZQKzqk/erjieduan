@@ -1,0 +1,83 @@
+数据劫持
+   Object.defineProperty(obj, prop, descriptor)
+
+参数
+
+
+  obj：必需，目标对象
+  prop：必需，目标对象 需获取或者修改的属性的名字
+  descriptor：必需，目标对象 属性所拥有的特性
+  返回值是此对象
+
+
+descriptor 描述符
+
+
+
+
+
+数据描述符
+       数据描述符是一个具有值的属性，该值可能是可写的，也可能是不可写的。
+
+    它具有以下可选的键值：
+
+    configurable：
+        表示该属性能否通过delete删除，
+         能否修改属性的特性或者能否修改访问器属性，默认为false。
+           当且仅当该属性的configurable为true时，才能实现上述行为。
+
+    enumerable：
+        表示该属性是否可以枚举，
+           即可否通过for..in访问属性。默认为false。
+
+    value：
+         表示该属性的值。可以是任何有效的JS值。
+                 默认为undefined。
+
+    writable：表示该属性的值是否可写，
+              默认为false。当且仅当属性的writable为true时，
+                  其值才能被赋值运算符改变2.1 数据描述符
+                      数据描述符是一个具有值的属性，
+                        该值可能是可写的，也可能是不可写的。
+
+
+
+访问器描述符
+
+
+
+   configurable：
+           表示该属性能否通过delete删除，
+             能否修改属性的特性或者能否修改访问器属性，默认为false。
+                 当且仅当该属性的configurable为true时，才能实现上述行为。
+
+    enumerable：
+           表示该属性是否可以枚举，即可否通过for..in访问属性。
+             默认为false。
+
+    get：在读取属性时调用的函数，默认值为undefined。
+
+    set：在写入属性时调用的函数，默认值为undefined。
+   
+
+   let obj = {
+     hello:'hello world'
+ };
+ 
+let proxy = new Proxy(obj, {
+    get(target, property) {
+        console.log('get');
+        return target[property];
+    },
+    set(target,property,value) {
+        console.log('set');
+        target[property] = value;
+    }
+});
+ 
+console.log(proxy.hello);
+proxy.hello = 'goodbye';
+console.log(proxy.hello);
+
+
+  

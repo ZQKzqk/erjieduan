@@ -1,0 +1,9 @@
+创建react项目
+ 
+npx create-react-app my-app 
+
+安装校验包
+
+
+npm i -S prop-types
+

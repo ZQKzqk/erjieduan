@@ -1,0 +1,43 @@
+css-in-js
+
+ **************
+
+  npm i -S styled-components
+
+
+
+ 样式继承
+    # 样式
+import styled from 'styled-components'
+
+const Button = styled.button`
+  font-size: 20px;
+  border: 1px solid red;
+  border-radius: 3px;
+`;
+// 一个继承 Button 的新组件, 重载了一部分样式
+const Button2 = styled(Button)`
+   color: blue;
+   border-color: yellow;
+`;
+   export {
+  Button,
+  Button2
+  }
+
+   可以用props来警醒属性传递
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,149 @@
+react 路由
+
+***************
+
+ npm i -S react-router-dom
+
+
+        Router： HashRouter和BrowserRouter
+       HashRouter： 使用URL的哈希值实现 （localhost:3000/#/first）
+       BrowserRouter：使用H5的history API实现（localhost3000/first）
+?      Link/NavLink组件：用于指定导航链接（a标签）
+	最终Link会编译成a标签，而to属性会被编译成 a标签的href属性
+?      Route组件：指定路由展示组件相关信息(组件渲染)
+       path属性：路由规则，这里需要跟Link组件里面to属性的值一致
+       component属性：展示的组件
+
+
+声明市导航
+
+    this.props.history.push/replace/go
+
+    
+
+路由参数
+   	以“/detail/:id”形式传递的数据
+    
+       相对相应的组件用this。props、match。params
+          接收 
+
+
+
+?查询字符串（query）
+ 通过地址栏中的 ?key=value&key=value传递
+ 在落地组件中通过this.props.location.search得到
+
+   
+隐士传参（state）   
+
+     通过state传递   例如to={{pathname：‘张三’，state：{
+                                          name：‘市领导就’}}}
+
+
+重定向  redirect 
+
+    <Redirect from="/" to="/film" />
+
+顺序停  switch  包裹
+
+      <Switch>
+   # 重定向 from从哪里来 to重定向到何处去
+    <Redirect from="/" to="/film" />
+    # 404设置
+    <Route component={Notfound} />
+</Switch>
+       
+
+
+
+嵌套路由
+   
+  在每一个一面下都会有
+         
+    let prefix = this.props.match.path;
+      
+     例 render() {
+        // 获取前缀，供后续地址做路由拼接
+        let prefix = this.props.match.path;
+       return (
+        <div>
+            <h1>欢迎使用后台管理程序</h1>
+            <Route path={`${prefix}/user`} component={User}></Route>
+            <Route path={`${prefix}/goods`} component={Goods}></Route>
+         </div>
+      );
+   }
+
+
+
+三种路由渲染方式 
+
+  1  <Route path="/home" component={Home} />
+                                  参数
+    <Route path="/home" component={(router)=><Home {…router} />} />
+ 
+
+                           组件没有改变时不会重新渲染  提高性能
+  2 <Route path="/home" render={router=><Home {…router} />} />
+
+
+
+  3 children  函数或组件
+
+    函数的话   都会出现这个子
+
+    精准匹配   组件   指令路由
+
+
+withRout对象时高阶组件
+
+  没有路由时可以获得路由对象
+
+
+
+
+自定义导航组件
+    
+     动态生成一个子组件
+
+
+
+
+
+
+
+?路由参数
+	动态路由    this.props.match.params
+	查询字符串  querystring 转一下 this.props.location.serach
+	state       this.props.location.state
+?404和重定向
+path=”*”  Redirect from to
+?嵌套路由
+	简化路由的定义的规则
+?3种渲染方式
+	component
+	render
+	children
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
